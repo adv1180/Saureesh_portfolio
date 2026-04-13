@@ -1,0 +1,258 @@
+/* ── Work Section ── */
+.work-section {
+  position: relative;
+  z-index: 1;
+  padding: 80px 0;
+}
+
+.work-section h2 {
+  font-size: 70px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.work-section h2>span {
+  color: var(--accentColor);
+}
+
+.work-container {
+  margin: auto;
+}
+
+/* ── Horizontal scroll: native hidden; custom track + thumb ── */
+.projects-scroll-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.projects-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.projects-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-scroll-custom {
+  width: 100%;
+  user-select: none;
+}
+
+.projects-scroll-custom-track {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.projects-scroll-custom-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  border-radius: 999px;
+  border: none;
+  background: var(--accentColor);
+  box-sizing: border-box;
+  cursor: grab;
+  pointer-events: auto;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.projects-scroll-custom-thumb:hover {
+  background: #c084fc;
+}
+
+.projects-scroll-custom-thumb:active {
+  cursor: grabbing;
+}
+
+.projects-scroll-custom-thumb--idle {
+  opacity: 0.5;
+  background: rgba(168, 85, 247, 0.55);
+}
+
+.projects-scroll-hint {
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(234, 229, 236, 0.45);
+}
+
+.projects-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  /* Add some padding to not stick right to the edge */
+  padding-right: 40px;
+}
+
+.project-card {
+  display: flex;
+  gap: 30px;
+  width: 500px;
+  min-width: 500px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 40px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+.project-number h3 {
+  font-size: 50px;
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+  opacity: 0.2;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+
+.project-details h4 {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+}
+
+.project-category {
+  font-weight: 200;
+  color: var(--accentColor);
+  margin: 0;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #adacac;
+  font-weight: 300;
+  margin: 0;
+}
+
+.project-tools {
+  margin-top: auto; /* pushes tools to bottom */
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.project-tools .tools-label {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-tools p {
+  font-weight: 300;
+  color: #eae5ec;
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+.project-link-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: 1px solid var(--accentColor);
+  color: var(--accentColor);
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.project-link-btn:hover {
+  background: var(--accentColor);
+  color: #000;
+}
+
+/* ── Responsive ── */
+@media only screen and (max-width: 1400px) {
+  .work-section h2 {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .project-card {
+    width: 400px;
+    min-width: 400px;
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .project-number h3 {
+    font-size: 40px;
+  }
+
+  .project-details h4 {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .work-section {
+    padding: 50px 0;
+  }
+
+  .work-section h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  .projects-track {
+    gap: 20px;
+    padding-right: 20px;
+  }
+
+  .project-card {
+    width: 320px;
+    min-width: 320px;
+    flex-direction: column;
+    padding: 25px;
+    gap: 15px;
+  }
+
+  .project-number h3 {
+    font-size: 35px;
+  }
+
+  .project-details h4 {
+    font-size: 20px;
+  }
+  
+  .project-description {
+    font-size: 15px;
+  }
+}
