@@ -128,7 +128,7 @@ const DataCore = () => {
             </Float>
           </Suspense>
           
-          <EffectComposer disableNormalPass>
+          <EffectComposer enableNormalPass={false}>
             <Bloom luminanceThreshold={0.8} mipmapBlur intensity={0.3} />
           </EffectComposer>
         </Canvas>

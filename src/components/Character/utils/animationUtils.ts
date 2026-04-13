@@ -12,7 +12,7 @@ const setAnimations = (gltf: any) => {
         startIntro: () => {
             if (introAction) introAction.play();
         },
-        hover: (gltfContext: any, element: HTMLElement) => {
+        hover: (_gltfContext: unknown, element: HTMLElement) => {
             element.addEventListener('mouseenter', () => { if (hoverAction) hoverAction.play(); });
             element.addEventListener('mouseleave', () => { if (hoverAction) hoverAction.stop(); });
         }
